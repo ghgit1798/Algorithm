@@ -1,3 +1,3 @@
 # algorithm
 
-python || DFS, BFS || Greedy algorithm || Sorting || Implementation ||
+python coding test
