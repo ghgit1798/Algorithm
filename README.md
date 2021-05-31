@@ -1,3 +1,0 @@
-# algorithm
-
-python coding test
