@@ -1,4 +1,5 @@
 def solution(citations):
+<<<<<<< HEAD
     ''' 가장 큰 인용횟수부터 H-index 찾기
 
     Notes:
@@ -18,6 +19,8 @@ def solution(citations):
 
     '''
 
+=======
+>>>>>>> 53c8199e1c3858d6737748792ecdf28304ea4100
     resultList = []
 
     for target in range(len(citations), 0, -1):
