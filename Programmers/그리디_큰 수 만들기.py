@@ -17,22 +17,19 @@ def solution(number, k):
     answer = ''
     stack = []
 
-    for n in number:
-        if len(stack)==0:
-            stack.append(n)
-            continue
-        elif stack[-1] < n:
-            while stack[-1] <= n and k != 0:
-                stack.pop()
-                k -= 1
-            stack.append(n)
-            continue
-        stack.append(n)
-    
-    while k != 0:
-        stack.pop()
-        k -= 1
+    for i,num in enumerate(number):
+        while stack and stack[-1]<num and k>0:
+            stack.pop()
+            k -= 1
+        
+        if k==0:
+            stack += number[i:]
+            break
 
+        stack.append(num)
+    
+
+    stack = stack[:-k] if k != 0 else stack
     answer = ''.join(stack)
 
     return answer
@@ -53,7 +50,7 @@ def best_solution(number, k):
     Returns:
         answer (str) : 가장 큰 수 반환
     '''
-    
+
     stack = []
 
     for (i, num) in enumerate(number):

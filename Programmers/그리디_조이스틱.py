@@ -15,7 +15,31 @@ def solution(name):
         answer (int) : 조이스틱 이동횟수
 
     '''
+    
+    idx, answer = 0
+    name_cnt = [min(ord(i)-ord('A'), 1+ord('Z')-ord(i))  for i in name]
 
+    while True:
+        answer += name_cnt[idx]
+        name_cnt[idx] = 0
+        left, right = 1,1
+
+        if sum(name_cnt) == 0:
+            break
+
+        if name_cnt[idx] == 0:
+            while name_cnt[idx-left] != 0:
+                left += 1
+            while name_cnt[idx+right] != 0:
+                right += 1
+        
+        answer += left if left < right else left
+        idx += -left if left < right else right
+
+    return answer
+
+
+def best_solution(name):
     make_name = [min(ord(i) - ord('A'), ord('Z')-ord(i)+1) for i in name]
     idx, answer = 0,0
     while True:
@@ -25,15 +49,11 @@ def solution(name):
             break
         left, right = 1,1
         while make_name[idx - left] == 0:
-            print('left', idx-left)
             left += 1
         while make_name[idx + right] == 0:
-            print('right',idx+right)
             right += 1
-        print('left, right 비교 결과', left, right)
         answer += left if left < right else right
         idx += -left if left < right else right
-        print('idx는', idx)
     return answer
 
 name = input()
