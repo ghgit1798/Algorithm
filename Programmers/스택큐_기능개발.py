@@ -3,9 +3,11 @@ from collections import deque
 def solution(progresses, speeds):
     '''
     Notes:
-        1. progresses를 큐에 넣고 100이면 꺼낸다.
-        2. 1일마다 speeds만큼 progresses를 더한다.
-        3. 하루마다 1,2번을 반복한다.
+        1. progresses, speeds를 큐에 넣는다.
+        2. progresses 0번째 값이 100이상이면 꺼낸다.
+            - speeeds도 0번째부터 함께 꺼낸다.
+        3. 1일마다 speeds만큼 progresses를 더한다.
+        4. progresses 원소를 모두 꺼낼때까지 반복한다.
 
     Args:
         progresses (list): 프로세스 진행도(int)를 담은 리스트
