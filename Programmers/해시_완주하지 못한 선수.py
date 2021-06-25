@@ -45,7 +45,7 @@ def best_solution1(participant, completion):
 def best_solution2(participant, completion):
     answer = '' 
     temp = 0 
-    dic = {} 
+    dic = {}
     for part in participant: 
         dic[hash(part)] = part 
         temp += int(hash(part)) 
