@@ -2,6 +2,30 @@ from collections import deque
 
 def solution(participant, completion):
     '''
+    Notes:
+        1. participant, completion을 정렬한다.
+        2. completion의 첫번째 요소부터 participant와 같은지 비교한다.
+        3. 만약 다르다면 해당 particiapnt를 반환한다.
+        4. completion의 마지막까지 비교가 끝나면 participant의 마지막 선수가 낙오자이다.
+    Args:
+        participant (list): 참가자 리스트
+        completion (list): 완주자 리스트
+    
+    Returns:
+        answer (str): 완주하지 못한 참가자 이름
+    '''
+    
+    participant.sort()
+    completion.sort()
+    
+    for i in range(len(completion)):
+        if participant[i] != completion[i]:
+            return participant[i]
+        
+    return participant[-1]
+
+def worst_solution(participant, completion):
+    '''
     Notes: 
     - 해당 풀이는 deque 사용 시 시간초과 문제가 발생하는 문제가 있었다.
     - 시간복잡도 계산 시 O(N^2)일 경우 통과가 안되도록 설계되어 있는 듯 하다.
