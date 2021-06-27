@@ -54,9 +54,6 @@ def best_solution2(phone_book):
             return False
     return True
 
-
-
-
 phone_book = ["119", "97674223", "1195524421"]
 # phone_book = ["123","456","789"]
 # phone_book = ['11', '0', '111']
