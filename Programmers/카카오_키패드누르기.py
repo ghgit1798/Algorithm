@@ -41,7 +41,7 @@ def solution(numbers, hand):
             print(f'n={n}, l={l}, r={r}, target={target}')
             lp = [abs(target[0]-l[0]), abs(target[1]-l[1])]
             rp = [abs(target[0]-r[0]), abs(target[1]-r[1])]
-            
+
             if sum(lp) < sum(rp):
                 l = target
                 answer += 'L'
@@ -55,21 +55,6 @@ def solution(numbers, hand):
                 else:
                     r = target
                     answer += 'R'
-
-            # if abs(sum(l)-sum(target)) < abs(sum(r)-sum(target)):
-            #     l = target
-            #     answer += 'L'
-            # elif abs(sum(l)-sum(target)) > abs(sum(r)-sum(target)):
-            #     r = target
-            #     answer += 'R'
-            # elif abs(sum(l)-sum(target)) == abs(sum(r)-sum(target)):
-            #     if hand=='left':
-            #         l = target
-            #         answer += 'L'
-            #     else:
-            #         r = target
-            #         answer += 'R'
-        print(n, target, l, r, answer)
     return answer
 
 
