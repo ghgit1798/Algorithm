@@ -27,9 +27,9 @@ def solution(new_id):
     new_id = repatter.findall(new_id)
     new_id = ''.join(new_id)
     new_id = re.sub('[..]+', '.', new_id)
-    if new_id[0]=='.':
+    if len(new_id)!=0 and new_id[0]=='.':
         new_id = new_id[1:]
-    if new_id[-1]=='.':
+    if len(new_id)!=0 and new_id[-1]=='.':
         new_id = new_id[:-1]
     if len(new_id) == 0:
         new_id = 'a'
@@ -37,7 +37,7 @@ def solution(new_id):
         new_id = new_id[:15]
         if new_id[-1] == '.':
             new_id = new_id[:-1]
-    while len(new_id) <= 2:
+    while len(new_id)!=0 and len(new_id) <= 2:
         c = new_id[-1]
         new_id = new_id + c
     
