@@ -1,6 +1,6 @@
 # Programmers-algorithm
-1. 입국심사
-2. 징검다리
+1. [입국심사](#1-입국심사)
+2. [징검다리](#2-징검다리)
 
 ## 1. [입국심사](https://programmers.co.kr/learn/courses/30/lessons/43238)
 ![image](https://user-images.githubusercontent.com/44918665/128691897-9fb5dfe3-5f6d-4308-9fb4-14906fa72c21.png)
